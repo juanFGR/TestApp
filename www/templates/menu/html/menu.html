@@ -1,0 +1,111 @@
+<!--View Information-->
+<!--View name : Menu-->
+<!--Controller name : menuCtrl-->
+<!--Controller path : www/templates/menu/js/controllers.js-->
+<!--State name : app-->
+<!--URL : #app-->
+
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced  material-background-nav-bar">
+            <ion-nav-buttons side="left">
+                <a class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleLeft()"></a>
+            
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">   
+                <a class="button button-icon button-clear ion-android-arrow-back" menu-toggle="right" ng-click="goBack()"></a>
+            </ion-nav-buttons>
+          
+
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <md-sidenav md-component-id="left" on-swipe-left="closeSideNav()" on-drag-left="closeSideNav()">
+        <!--menu section-->
+        <div class="material-background" id="toggle-menu-left-header">
+            <!--menu header section-->
+            <div class="menu-left-header">
+            <a ng-click="uploadProfileImage()">
+                <img class="user-img" ng-src="{{auth.image}}">
+</a>
+                <p>
+                    <span class="title">{{user.name}}</span>
+                    <br/>
+                </p>
+            </div><!--end menu header section-->
+        <a class="md-button md-accent md-fab fab-toolbar-medium activated" ng-click="navigateTo('app.profile')" aria-label="Add" style="z-index:9999; margin-top:0px" tabindex="0">
+        <i class="ion-edit"></i>
+    </a>
+        </div> <!--menu content section-->
+
+        <ion-content id="toggle-menu-left-content">
+
+            <!--If device is android application will present below code.-->
+            <!--It will disable animation to better performance on android.-->
+            <!--list section-->
+            <div class="menu-list">
+                <md-subheader class="md-warn">Mi cuenta</md-subheader>
+
+
+                    <div class="row menu-item"  ng-click="navigateTo('app.card')">
+                        <div class="col-33">
+                            <i class="fa fa-cubes"></i>
+                        </div>
+                        <div class="col-66">
+                            <span>Mi tarjeta</span>
+                        </div>
+                    </div>
+                <div class="row menu-item"  ng-click="navigateTo('app.contact')">
+                    <div class="col-33">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <div class="col-66">
+                        <span>Contactos</span>
+                    </div>
+                </div>
+
+                <div class="row menu-item"  ng-click="navigateTo('app.newsFeed')">
+                    <div class="col-33">
+                        <i class="fa fa-newspaper-o"></i>
+                    </div>
+                    <div class="col-66">
+                        <span>Eventos</span>
+                    </div>
+                </div>
+                <div class="row menu-item"  ng-click="navigateTo('app.onlineCourse')">
+                    <div class="col-33">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="col-66">
+                        <span>Consejos docardy</span>
+                    </div>
+                </div>
+
+                
+
+                
+                <md-subheader class="md-warn">Soporte</md-subheader>
+                <div class="row menu-item"  ng-click="navigateTo('app.contractUs')">
+                    <div class="col-33">
+                        <i class="fa fa-inbox"></i>
+                    </div>
+                    <div class="col-66">
+                        <span>Email & Message</span>
+                    </div>
+                </div>
+                    <div class="row menu-item"  ng-controller="loginCtrl" ng-click="logout()">
+                    <div class="col-33">
+                        <i class="fa fa-close"></i>
+                    </div>
+                    <div class="col-66">
+                        <span>Salir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--end list section-->
+        </ion-content><!--end menu content section-->
+        <!--end menu section-->
+
+    </md-sidenav>
+</ion-side-menus>

@@ -1,0 +1,210 @@
+<!--View Information-->
+<!--View name : Cube Feed-->
+<!--State name : app.cubeFeed-->
+<!--URL : #app/cubeFeed-->
+
+<ion-view title="MI TARJETA">
+    <!--cube feed section-->
+    <ion-content id="cube-feed-content" ng-controller="cardCtrl">
+
+
+    <div ng-switch on="flag"> 
+      <div ng-switch-when="false">
+        
+     
+        <!--cube feed list section-->
+        <div class="feed-list row">
+            <div class="col">
+                <!--cube feed item section-->
+                <div class="feed-item">
+
+                   <div class="feed-content row">
+                  <div class="col left" style="margin:5px;padding:5px;">
+                  <span><h4>{{card.name}}</h4> </span>
+                  <span style="font-size:0.8em"> <i class="ion-android-home"></i>&nbsp;{{card.business}}, {{card.job}}</span> <br>
+                </div>
+              <div class="col right">
+               <a ng-click="uploadCardImage('{{card.id}}')">
+               <img ng-src='{{card.image}}' class="user-img" style="max-width: 100%;border-radius: 50%;min-height: 50px; width: 62px; height: 62px;margin-bottom: 2px;"/></a>
+
+
+                </div></div>
+
+ <div style="width:100%; text-align:center;font-size:0.8em"><p><i>{{card.description}}</i></p></div>
+                
+                    <div class="feed-content row">
+
+                        <div class="col left">
+                  {{card.web}}<br>
+                  {{card.email}}<br>
+                  {{card.phone}}
+                            
+                        </div>
+                        <div class="col right">
+                                   <div style="text-align:right">   
+               <md-icon md-font-icon="fa fa-facebook-square fa-2x"></md-icon>&nbsp;
+               <md-icon md-font-icon="fa fa-google-plus-square fa-2x"></md-icon>&nbsp;
+               <md-icon md-font-icon="fa fa-linkedin-square fa-2x"></md-icon> &nbsp;
+              <div id="output"></div>     
+     
+
+              <!--a ng-controller="contractUsCtrl" ng-click="scanqr()" aria-label="Add" style="z-index:9999" tabindex="0">
+        <i class="ion-qr-scanner"></i>
+    </a>
+&nbsp;&nbsp;
+ <a  ng-controller="contractUsCtrl" ng-click="sentEmail(card.email)" aria-label="Add" style="z-index:9999" tabindex="0">
+        <i class="ion-email"></i>
+    </a!-->
+    </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end cube feed item section-->
+            </div>
+         
+
+
+        </div><!--end cube feed list section-->
+
+<qrcode data="{{card.name}}"></qrcode>
+<div class="row" style="text-align:center">
+<div class="col-10"></div>
+<div class="col-80" ng-show="!panel"><br><br></div>
+<div class="col-80" ng-show="panel">
+  <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="sentSms()">
+    <md-icon md-font-icon="fa-whatsapp fa-2x" class="fa "></md-icon>
+  </md-button>
+  <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="requestEmail()">
+    <md-icon md-font-icon="fa-envelope fa-2x" class="fa "></md-icon>
+  </md-button>
+  <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="showqr()">
+     <md-icon md-font-icon="fa-qrcode fa-2x" class="fa "></md-icon>
+  </md-button>
+    <md-button class="md-fab md-mini" aria-label="Eat cake" ng-click="scanqr()">
+     <i style="font-size: 10px; line-height: 1.0em;">SCAN</i> 
+  </md-button>
+</div>
+</div>
+
+<div class="row" style="text-align:center">
+<div class="col-33"><md-button class="md-fab" aria-label="Eat cake" style="background-color: rgba(0,0,0,0.12)" disabled><img src="img/icons/icono-tarjeta.png" style="max-width: 100%;padding: 1px;margin-top: 5px;" /></md-button><br>
+Mi tarjeta</div>
+<div class="col-33">
+<md-button ng-click="toggle()" class="md-fab" aria-label="Eat cake"><img src="img/icons/icono-compartir.png" style="max-width: 100%;padding: 1px;margin-top: 5px;" /></md-button><br>Compartir</div>
+<div class="col-33">
+<md-button class="md-fab" aria-label="Eat cake" ng-click="go('app.contact')"><img src="img/icons/icono-archivo-tarjetas.png" style="max-width: 100%;padding: 1px;margin-top: 5px;" /></md-button><br>Tarjetero</div>
+</div>
+
+
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Compartir tarjeta</h1> 
+                <a class="button button-icon button-clear ion-android-arrow-back" menu-toggle="right" ng-click="closeModal()"></a>
+    </ion-header-bar>
+    <ion-content>
+ 
+      <div style="text-align:center">
+          <br><br><br><br>
+           <div id="modalito"> </div>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+
+
+
+    <br><br>
+
+        <div layout="column" layout-padding ng-cloak>
+  <br/>
+  <md-content class="autoScroll" style="padding:5px">
+    <md-input-container class="md-block">
+      <!-- Use floating label instead of placeholder -->
+       <label style="color:red !important">Nombre</label>
+      <input ng-model="card.name" ng-blur="save()" type="text">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <!--md-icon md-font-icon="fa fa-phone" style="margin:0 auto;float:left; padding: 10px; color:red !important"></md-icon-->
+      <label style="color:red !important">Telefono</label>
+      <input ng-model="card.phone" ng-blur="save()" type="text" placeholder="Phone Number">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <!--md-icon md-font-icon="fa fa-envelope" style="margin:0 auto;float:left; padding: 10px; color:red !important"></md-icon-->
+      <label style="color:red !important">Correo electronico</label>
+      <input ng-model="card.email" type="email" placeholder="Email (required)" ng-required="true">
+    </md-input-container>
+
+        <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <!--md-icon md-font-icon="fa fa-envelope" style="margin:0 auto;float:left; padding: 10px; color:red !important"></md-icon-->
+      <label style="color:red !important">Empresa</label>
+      <input ng-model="card.business" type="text" >
+    </md-input-container>
+
+        <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <!--md-icon md-font-icon="fa fa-envelope" style="margin:0 auto;float:left; padding: 10px; color:red !important"></md-icon-->
+      <label style="color:red !important">Cargo</label>
+      <input ng-model="card.job" type="text" >
+    </md-input-container>
+
+    <md-input-container class="md-block">
+
+      <label style="color:red !important">Web personal o una url</label>
+      <!--md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon-->
+      <input ng-model="card.web" type="text">
+    </md-input-container>
+    
+        <md-input-container class="md-block">
+           <label style="color:red !important">Sobre mí...</label>
+          <textarea ng-model="card.description" ng-blur="save()" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+  </md-content>
+</div>
+
+
+
+ </div>
+      <div ng-switch-when="true">
+
+        <!--cube feed list section-->
+        <div class="feed-list row">
+            <div class="col">
+                <!--cube feed item section-->
+                <div class="feed-item">
+                   <div class="feed-content row">
+                  <div style="margin:5px;padding:5px">
+                  <span><h2>{{theircard.name}}</h2></span>
+                  <span> <i class="ion-android-home"></i>&nbsp;{{theircard.business}}, {{theircard.job}}</span> <br>
+                  <br><br>
+                </div>
+             </div>
+                
+                    <div class="feed-content row">
+                        <div class="col left">
+              
+                  {{theircard.email}}<br>
+                  {{theircard.phone}}
+                            
+                        </div>
+                        <div class="col right">
+                                   <div style="text-align:right">   
+               <md-icon md-font-icon="fa fa-facebook-square fa-2x"></md-icon>&nbsp;
+               <md-icon md-font-icon="fa fa-google-plus-square fa-2x"></md-icon>&nbsp;
+               <md-icon md-font-icon="fa fa-linkedin-square fa-2x"></md-icon> &nbsp;
+              <div id="output"></div>     
+    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+    </ion-content><!--end cube feed section-->
+</ion-view>

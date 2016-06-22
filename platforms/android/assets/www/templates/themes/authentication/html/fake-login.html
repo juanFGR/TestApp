@@ -1,0 +1,59 @@
+<!--View Information-->
+<!--View name : Fake Login-->
+<!--State name : app.fakeLogin-->
+<!--URL : #app/fakeLogin-->
+
+<ion-view class="auth-bg" hide-nav-bar="true" style="font-size:1.5em !important">
+    <!--left button on navigation bar-->
+        <div side="left">
+        <a ng-click="navigateTo('app.tryAppNoBackBtn')" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </div><!--end left button on navigation bar-->
+
+    <!--login content section-->
+    <ion-content id="social-sign-up-content" ng-controller="loginCtrl" style="vertical-align: middle;display: table;">
+        <!--fake login form section-->
+         <div class="app-icon">
+        <br><br>
+            <img src="img/docardy/nlogo.png" class="md-card-image" style="width:100%;max-width:100%">
+        </div>
+ <br><br> <br><br>
+<div style="text-align:center;display: table-cell; vertical-align: middle;">
+
+<md-input-container  class="md-default-theme">
+      <md-icon md-font-icon="fa fa-user" style="color:white" class="md-default-theme md-font" aria-hidden="true"></md-icon>
+      <input  type="text" placeholder="Nombre usuario" class="ng-pristine ng-valid md-input ng-touched" aria-label="Nombre" ng-model="auth.user" tabindex="0" aria-invalid="false" style="color:white;" />
+    </md-input-container>
+
+    <md-input-container  class="md-default-theme">
+      <md-icon md-font-icon="fa fa-key" style="color:white" class="md-default-theme md-font" aria-hidden="true"></md-icon>
+      <input  type="password" placeholder="Contraseña" class="ng-pristine ng-valid md-input ng-touched" aria-label="Nombre" ng-model="auth.pass" tabindex="0" aria-invalid="false" style="color:white;" />
+    </md-input-container>
+
+
+
+
+                <!--a class="md-button md-accent md-fab facebook-background" ng-controller="facebookLoginCtrl" ng-click="login()">
+                        <i class="fa fa-facebook" style="font-size:14px"></i>
+                </a>
+                               <a class="md-button md-accent md-fab google-color-background" ng-click="navigateTo('app.googlePlusLogin')">
+                        <i class="fa fa-google" style="font-size:14px"></i>
+                </a>
+
+                               <a class="md-button md-accent md-fab instagram-color-background" ng-click="navigateTo('app.instagramLogin')">
+                        <i class="fa fa-instagram" style="font-size:14px"></i>
+                </a>
+
+                               <a class="md-button md-accent md-fab foursquare-color-background" ng-click="navigateTo('app.foursquareLogin')">
+                        <i class="fa fa-foursquare" style="font-size:14px"></i>
+                </a-->
+                <div style="text-align:right">
+                <br><br>
+            <a type="button"  ng-click="signin()" style="color:white">
+                    ENTRAR
+                </a>
+                </div>
+                </div>
+    </ion-content><!--end login content section-->
+</ion-view>

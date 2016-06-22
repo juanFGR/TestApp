@@ -1,0 +1,66 @@
+<!--View Information-->
+<!--View name : NEWS Feed-->
+<!--State name : app.newsFeed-->
+<!--URL : #app/newsFeed-->
+
+<ion-view  class="events-bg" title="EVENTOS">
+    <!--news feed section-->
+    <ion-content id="news-feed-content" ng-init="init()" class="events-bg">
+<br>
+
+<div ng-repeat="event in eventList">
+        <div class="news-item" style="margin:4px">
+            <!--header section-->
+            <div style="text-align:center; padding:5px">
+              <img style=" max-width:100%" ng-src="{{event.get('image')}}">
+            </div>
+            <div class="row header">
+              
+                <div class="col-80">
+                    <p class="name">
+                    {{ event.get("name") }}<br>
+                    <b style="color:black">#testeandodocardy</b>
+                    </p>
+                </div>
+                <div class="col-20"></div>
+            </div><!--end header section-->
+
+            <!--detail section-->
+            <div class="row detail">
+                <div class="col">
+                <b>Fecha</b>, 22 de Junio a las 18:00 UTC+01<br>
+
+                <b>Enlaces del Evento </b>, <a target="_blank" href="https://www.facebook.com/events/1062567323778347/"> Facebook</a>
+
+                    <p class="content">
+                      {{ event.get("description") }}
+                    </p>
+
+                    <!--img ng-src="{{event.get('image')}}" class="user-img"/-->
+                </div>
+            </div>
+
+            <!--footer section-->
+            <div class="footer" style="text-align:right">
+               <md-button class="md-fab md-mini" ng-click="detailed(event.id)" aria-label="Eat!">
+               <a href="https://www.google.com/maps/place/Local+Coworking/@28.462129,-16.2603557,17z/data=!3m1!4b1!4m5!3m4!1s0xc41cc9b556e7f4b:0x64e467a808fea002!8m2!3d28.462129!4d-16.258167" target="_blank" style="text-decoration:none;">
+                     <md-icon md-font-icon="fa-map-marker fa-2x" class="fa "></md-icon>
+               </a>
+      
+</md-button>
+              
+            </div><!--end footer section-->
+        </div>
+</div>
+        
+
+        <div class="row"></div>
+    </ion-content><!--end news feed section-->
+
+    <!--button section-->
+    <!--div class="footer-fab-bar">
+        <a class="md-button md-accent md-fab fab-footer" aria-label="Add">
+            <i class="ion ion-plus"></i>
+        </a>
+    </div--><!--end button section-->
+</ion-view>

@@ -1,0 +1,57 @@
+<!--View Information-->
+<!--View name : NEWS Feed-->
+<!--State name : app.newsFeed-->
+<!--URL : #app/newsFeed-->
+
+<ion-view title="EVENTOS">
+    <!--news feed section-->
+    <ion-content id="news-feed-content">
+<br>
+
+        <div class="news-item" style="margin:4px">
+            <!--header section-->
+            <div class="row header">
+                   <img ng-src="{{event.get('image')}}" class="user-img"/>
+            </div><!--end header section-->
+
+            <!--detail section-->
+            <div class="row detail">
+                <div class="col">
+
+                    <p class="content">
+                      {{ event.get("description") }}
+                    </p>
+                    <img ng-src="{{event.get('image')}}" class="user-img"/>
+                    <p class="content">
+                    {{ event.get("web") }}
+                        
+                    </p>
+                </div>
+            </div>
+
+            <!--footer section-->
+            <div class="row footer">
+                <div class="col-33">
+                    <span class="number">10.9k</span> <span class="wording">Likes</span>
+                </div>
+                <div class="col-33">
+                    <span class="number">20k</span> <span class="wording">Comments</span>
+                </div>
+                <div class="col-33">
+                    <span class="number">1k</span> <span class="wording">Shared</span>
+                </div>
+            </div><!--end footer section-->
+        </div>
+
+        
+
+        <div class="row"></div>
+    </ion-content><!--end news feed section-->
+
+    <!--button section-->
+    <!--div class="footer-fab-bar">
+        <a class="md-button md-accent md-fab fab-footer" aria-label="Add">
+            <i class="ion ion-plus"></i>
+        </a>
+    </div--><!--end button section-->
+</ion-view>

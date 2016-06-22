@@ -1,0 +1,59 @@
+<!--View Information-->
+<!--View name : Fake Sign Up-->
+<!--State name : app.fakeSignUp-->
+<!--URL : #app/fakeSignUp-->
+
+<ion-view class="auth-bg" hide-nav-bar="true">
+    <!--left button on navigation bar-->
+    <div side="left">
+        <a ng-click="navigateTo('app.tryAppNoBackBtn')" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </div><!--end left button on navigation bar-->
+
+    <!--social sign up section-->
+    <ion-content id="social-sign-up-content" ng-controller="loginCtrl" style="color:white; font-size:1.5em !important">
+        <div class="app-icon">
+        <br><br>
+            <img src="img/docardy/nlogo.png" class="md-card-image" style="width:100%;max-width:100%">
+        </div>
+        <!--input section-->
+    <md-input-container  class="md-default-theme">
+      <md-icon md-font-icon="fa fa-user" style="color:white" class="md-default-theme md-font" aria-hidden="true"></md-icon>
+      <input  type="text" placeholder="Nombre usuario" class="ng-pristine ng-valid md-input ng-touched" aria-label="Nombre" ng-model="auth.user" tabindex="0" aria-invalid="false" style="color:white;" />
+    </md-input-container>
+
+    <md-input-container  class="md-default-theme">
+      <md-icon md-font-icon="fa fa-key" style="color:white" class="md-default-theme md-font" aria-hidden="true"></md-icon>
+      <input  type="password" placeholder="Contraseña" class="ng-pristine ng-valid md-input ng-touched" aria-label="Nombre" ng-model="auth.pass" tabindex="0" aria-invalid="false" style="color:white;" />
+    </md-input-container>
+
+    <md-input-container  class="md-default-theme">
+      <md-icon md-font-icon="fa fa-key" style="color:white" class="md-default-theme md-font" aria-hidden="true"></md-icon>
+      <input  type="password" placeholder="Repite contraseña" class="ng-pristine ng-valid md-input ng-touched" aria-label="Nombre" id="password" tabindex="0" aria-invalid="false" style="color:white;" />
+    </md-input-container>
+
+    <md-input-container  class="md-default-theme">
+      <md-icon md-font-icon="fa fa-envelope" style="color:white" class="md-default-theme md-font" aria-hidden="true"></md-icon>
+      <input  type="email" placeholder="Correo electronico" class="ng-pristine ng-valid md-input ng-touched" aria-label="Nombre" ng-model="auth.email" tabindex="0" aria-invalid="false" style="color:white;" />
+    </md-input-container>
+
+       
+        <!--end input section-->
+        <div style="text-align:right">
+        <br>
+            <a type="button"  ng-click="signup()" style="color:white">
+                REGISTRARSE
+            </a>
+        </div>
+
+      
+        <!--a class="md-button md-accent md-fab facebook-background" ng-controller="facebookRegisterCtrl" ng-click="register()">
+                        <i class="fa fa-facebook" style="font-size:14px"></i>
+                </a-->
+
+    </ion-content><!--end social sign up section-->
+      <div class="auth-footer" style="color:white">
+            Si se registra esta aceptando las <b><a>CONDICIONES DE USO</a></b> y la <b><a>POLÍTICA DE CONFIDENCIALIDAD</a></b>
+        </div>
+</ion-view>

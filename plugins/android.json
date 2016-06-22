@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.cordova.plugins.sms": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-googleplayservices": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-transport-security": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-flashlight": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.docardy.app"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.docardy.app"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.docardy.app"
+        }
+    }
+}

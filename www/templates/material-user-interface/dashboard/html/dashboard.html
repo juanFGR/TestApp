@@ -1,0 +1,60 @@
+<!--View Information-->
+<!--View name : Dashboard-->
+<!--Controller name : dashboardCtrl-->
+<!--Controller path : www/templates/material-user-interface/dashboard/js/controllers.js-->
+<!--State name : app.dashboard-->
+<!--URL : #app/dashboard-->
+
+<ion-view view-title="">
+
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button class="md-icon-button ion-nav-button-right" ng-click="goToSetting()"
+                   aria-label="Setting">
+            <i class="ion-android-more-vertical"></i>
+        </md-button>
+    </ion-nav-buttons> <!--end right button on navigation bar-->
+
+    <!--toolbar section-->
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+        <div>
+            <h1>Reservas</h1>
+
+            <h2>Escoge una instalación</h2>
+        </div>
+    </md-toolbar><!--end toolbar section-->
+
+    <!--dashboard section-->
+    <ion-content id="dashboard-content">
+
+       <md-card class="md-default-theme">
+                <img ng-src="img/2.jpg" class="md-card-image" alt="Card image" src="img/2.jpg">
+                <md-card-content>
+                    <h2 class="md-title">Complejo Ofra - Piscina</h2>
+
+                    <p>
+                        piscina complejo deportivo ofra ........................................
+                    </p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <a href="" class="md-button md-default-theme">Reservar</a>
+                </div>
+            </md-card>
+
+
+                   <md-card class="md-default-theme">
+                <img ng-src="img/1.jpg" class="md-card-image" alt="Card image" src="img/1.jpg">
+                <md-card-content>
+                    <h2 class="md-title">Complejo Taco - Canchas</h2>
+
+                    <p>
+                        canchas complejo deportivo Taco ........................................
+                    </p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <a href="" class="md-button md-default-theme">Reservar</a>
+                </div>
+            </md-card>
+        <!--end list section-->
+    </ion-content><!--end dashboard section-->
+</ion-view>
